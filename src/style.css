@@ -1,60 +1,142 @@
-body{
-    background-color: rgb(247, 246, 246);
-    font-family: Arial, sans-serif;
-    color: #f5eaea;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f5eaea;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 #display {
-    background-color: #f7f0f0;
-    border: solid 1.5px #38db5b;
-    padding: 18px;
-    border-radius: 10px;
-    font-size: 24px;
-    text-align: right;
-    margin-bottom: 20px;
-    margin-top: 13px;
-    width: 350px;
-    box-shadow: inset 4px 7px 7px ;
+  background-color: #1e1e2e;
+  border: 2px solid #06b6d4;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: right;
+  margin-bottom: 20px;
+  width: 100%;
+  color: #4ade80;
+  box-shadow:
+    inset 0 4px 8px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(6, 182, 212, 0.3);
+  letter-spacing: 1px;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .calculator {
-    background-color: #a5a7ac;
-    border: solid 2px  #a1a3a5;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    height: 500px;
-    box-shadow: 8px 10px 8px rgba(2, 0, 0, 0.897);
-
+  background: linear-gradient(180deg, #2d2d44 0%, #1a1a2e 100%);
+  border: 2px solid rgba(6, 182, 212, 0.3);
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 350px;
+  width: 100%;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(6, 182, 212, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .buttons {
-    padding: 10px;
-    border-radius: 15px;
-    justify-content:center;
-    height: 350px;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
 }
 
 .buttons .btn {
-    background-color: #d5d3dd;
-    border: solid 1px #85680b;
-    padding: 10px 20px 10px 20px;
-    display: inline-block;
-    font-size: 20px;
-    width: 70px;
-    margin: 9px;
-    color:black;
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 1px 6px 4px #090511;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #2d2d44;
+  border: 2px solid #404060;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  aspect-ratio: 1;
+  color: #e0e0ff;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.buttons .btn:hover {
+  background-color: #3d3d54;
+  border-color: #06b6d4;
+  box-shadow: 0 6px 16px rgba(6, 182, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.buttons .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttons .btn.operator {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.4);
+}
+
+.buttons .btn.operator:hover {
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.6);
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+}
+
+.buttons .btn.equal {
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  color: #ffffff;
+  border: none;
+  grid-column: span 2;
+  font-size: 20px;
+  box-shadow: 0 4px 16px rgba(74, 222, 128, 0.4);
+}
+
+.buttons .btn.equal:hover {
+  box-shadow: 0 8px 24px rgba(74, 222, 128, 0.6);
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #5be896 0%, #34d399 100%);
+}
+
+.buttons .btn.clear {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+}
+
+.buttons .btn.clear:hover {
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.6);
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #f55555 0%, #e11d48 100%);
+}
+
+.buttons .btn.delete {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);
+}
+
+.buttons .btn.delete:hover {
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.6);
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #fb8c3c 0%, #f87827 100%);
 }
